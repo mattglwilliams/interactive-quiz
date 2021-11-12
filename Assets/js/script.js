@@ -75,3 +75,20 @@ startBtn.addEventListener("click", function runTimer () {
     }, 1000);
     getQuestions();
 });
+
+function getQuestions () {
+    questionsElement.innerHTML = "";
+    for (var i = 0; i < questions.length; i++) {
+        var displayQuestion = questions[currentQuestionIndex].question;
+        var displayChoices = questions[currentQuestionIndex].choices;
+        questionsElement.textContent = displayQuestion;
+        var choicesUl = document.createElement('ul');
+    displayChoices.forEach(function (choice) {
+            var choicesLi = document.createElement('li')
+            choicesLi.textContent = choice;
+            choicesUl.appendChild(choicesLi)
+            choicesLi.addEventListener('click', checkAnswer)
+        })
+            questionsElement.appendChild(choicesUl)
+    }
+}
