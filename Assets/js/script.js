@@ -50,3 +50,8 @@ let questions = [
         answer: '2. var carName;'
     },
 ];
+
+const timer = document.getElementById('timer');
+const questionWrapper = document.getElementById('questions-container');
+const questionsElement = document.getElementById('questions');
+const startBtn = document.getElementById('start-btn');
