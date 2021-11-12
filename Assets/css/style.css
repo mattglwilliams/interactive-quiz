@@ -37,3 +37,67 @@
     max-width: 10vw;
     text-align: center;
 }
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questions-container {
+    border: 3px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20vw;
+    max-width: 20vw;
+    min-height: 30vh;
+    max-height: 40vh;
+    flex: 0 0 1;
+    padding: 3%;
+}
+
+.questions {
+    text-align: center;
+}
+
+.questions h1 {
+    padding-bottom: 5%;
+}
+
+.questions p {
+    padding-bottom: 5%;
+}
+
+.questions input {
+    margin: 6% 3% 0 0;
+    height: 2.3em;
+}
+
+li {
+    background-color: rgb(164, 68, 177);
+    margin: 3% 0 2% 0;
+    padding: 2%;
+    cursor: pointer;
+    text-align: center;
+    list-style: none;
+    color: white;
+    border-radius: 0.75em;
+}
+
+li:hover {
+    background-color: rgb(179, 119, 187);
+}
+
+button {
+    cursor: pointer;
+    padding: 2%;
+    background-color: white;
+    color: rgb(164, 68, 177);
+}
+
+button:hover {
+    background-color: rgb(164, 68, 177);
+    color: white;
+}
