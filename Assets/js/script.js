@@ -132,4 +132,13 @@ function checkAnswer(event) {
     questionsElement.appendChild(initialsLabel);
     questionsElement.appendChild(initialsInput);
     questionsElement.appendChild(initialsSubmitButton);
+
+    initialsSubmitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        var finalScore = userScore;
+        var initalsScore = JSON.stringify(initialsInput.value + " : " + finalScore)
+        scores.push(initalsScore)
+        localStorage.setItem("scores", scores)
+        window.location.replace("./HighScores.html");
+    })
   };
