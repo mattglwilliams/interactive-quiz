@@ -95,13 +95,15 @@ function getQuestions () {
 
 function checkAnswer(event) {
     var selectedAnswer = event.target
-    
+    var answerMessage = document.createElement("p")
     if (selectedAnswer.textContent === questions[currentQuestionIndex].answer) {
         console.log("Correct");
         userScore++;
+        answerMessage.textContent = "Correct!"
     } else {
         console.log("Incorrect")
         timeLeft = timeLeft - timePenalty;
+        answerMessage.textContent = "Incorrect!"
     }
 
     currentQuestionIndex++
@@ -111,6 +113,7 @@ function checkAnswer(event) {
     } else {
         getQuestions();
     }
+    questionsElement.appendChild(answerMessage)
   }
 
   function endOfGame() {
