@@ -52,7 +52,7 @@ let questions = [
 ];
 
 const timer = document.getElementById('timer');
-const questionWrapper = document.getElementById('questions-container');
+const questionContainer = document.getElementById('questions-container');
 const questionsElement = document.getElementById('questions');
 const startBtn = document.getElementById('start-btn');
 
@@ -112,3 +112,24 @@ function checkAnswer(event) {
         getQuestions();
     }
   }
+
+  function endOfGame() {
+    questionsElement.innerHTML = ""
+    timeLeft = 0;
+    var gameOverHeading = document.createElement("h1")
+    var gameOverContent = document.createElement("p")
+    var initialsLabel = document.createElement("label")
+    var initialsInput = document.createElement("input")
+    var initialsSubmitButton = document.createElement("button")
+    // initialsSubmit.setAttribute("type", "submit")
+    gameOverHeading.textContent = "Game Over!"
+    gameOverContent.textContent = "You scored " + userScore + "."
+    initialsLabel.textContent = " Enter your initials to save your score: "
+    initialsInput.textContent = ""
+    initialsSubmitButton.textContent = "Save your score"
+    questionsElement.appendChild(gameOverHeading);
+    questionsElement.appendChild(gameOverContent);
+    questionsElement.appendChild(initialsLabel);
+    questionsElement.appendChild(initialsInput);
+    questionsElement.appendChild(initialsSubmitButton);
+  };
