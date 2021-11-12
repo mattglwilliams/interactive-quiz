@@ -55,3 +55,9 @@ const timer = document.getElementById('timer');
 const questionWrapper = document.getElementById('questions-container');
 const questionsElement = document.getElementById('questions');
 const startBtn = document.getElementById('start-btn');
+
+let userScore = 0;
+let timeLeft = 50;
+let timePenalty = 5;
+let currentQuestionIndex = 0;
+let scores = [];
