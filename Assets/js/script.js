@@ -92,3 +92,23 @@ function getQuestions () {
             questionsElement.appendChild(choicesUl)
     }
 }
+
+function checkAnswer(event) {
+    var selectedAnswer = event.target
+    
+    if (selectedAnswer.textContent === questions[currentQuestionIndex].answer) {
+        console.log("Correct");
+        userScore++;
+    } else {
+        console.log("Incorrect")
+        timeLeft = timeLeft - timePenalty;
+    }
+
+    currentQuestionIndex++
+
+    if (currentQuestionIndex >= questions.length) {
+        endOfGame();
+    } else {
+        getQuestions();
+    }
+  }
