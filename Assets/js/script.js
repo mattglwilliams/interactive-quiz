@@ -61,3 +61,17 @@ let timeLeft = 50;
 let timePenalty = 5;
 let currentQuestionIndex = 0;
 let scores = [];
+
+startBtn.addEventListener("click", function runTimer () {
+    var timerInterval = setInterval(function () {
+        if (timeLeft > 0) {
+            timeLeft--;
+            timer.textContent = timeLeft + " seconds remaning";
+        } else {
+            clearInterval(timerInterval);
+            timer.textContent = "Times up"
+            endOfGame();
+        }
+    }, 1000);
+    getQuestions();
+});
