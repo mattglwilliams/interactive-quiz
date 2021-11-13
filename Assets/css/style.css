@@ -110,3 +110,73 @@ button:hover {
 .answer-message {
     padding-top: 5%;
 }
+
+/* Media queries and breakpoints */
+
+@media screen and (max-width: 1500px) {
+    .questions-container {
+        min-width: 30vw;
+        max-width: 30vw;
+        min-height: 40vh;
+        max-height: 50vh;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .questions-container {
+        min-width: 40vw;
+        max-width: 40vw;
+        min-height: 50vh;
+        max-height: 60vh;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .questions-container {
+        min-width: 70vw;
+        max-width: 70vw;
+        min-height: 50vh;
+        max-height: 50vh;
+    }
+    .highscores {
+        min-width: 15vw;
+        max-width: 15vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .timer {
+        min-width: 15vw;
+        max-width: 15vw;
+    }    
+}
+
+@media screen and (max-width: 600px) {
+    .questions-container {
+        min-width: 70vw;
+        max-width: 70vw;
+        min-height: 50vh;
+        max-height: 50vh;
+    }
+    .highscores {
+        min-width: 20vw;
+        max-width: 20vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .questions-container {
+        min-width: 70vw;
+        max-width: 70vw;
+        min-height: 50vh;
+        max-height: 50vh;
+    }
+    .highscores {
+        min-width: 25vw;
+        max-width: 25vw;
+    }
+    .timer {
+        min-width: 20vw;
+        max-width: 20vw;
+    }  
+}
