@@ -205,6 +205,6 @@ function endOfGame() {
         localStorage.setItem('scores', JSON.stringify(overallScore));
 
         // once they have submitted, they're taken to the highscores page
-        window.location.replace("./HighScores.html");
+        window.location.replace("./highscores.html");
     });
 };
