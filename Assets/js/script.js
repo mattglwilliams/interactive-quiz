@@ -73,11 +73,11 @@ startBtn.addEventListener("click", function runTimer () {
             endOfGame();
         }
     }, 1000);
+    questionsElement.innerHTML = "";
     getQuestions();
 });
 
 function getQuestions () {
-    questionsElement.innerHTML = "";
     for (let i = 0; i < questions.length; i++) {
         let displayQuestion = questions[currentQuestionIndex].question;
         let displayChoices = questions[currentQuestionIndex].choices;
