@@ -3,18 +3,20 @@ var scoreLog = document.getElementById('score-log')
 var clearButton = document.getElementById('clear-btn')
 var backButton = document.getElementById('back-btn')
 
-var finalScoreEntry = localStorage.getItem('scores')
+let overallScore = JSON.parse(localStorage.getItem('scores'));
 
-if (finalScoreEntry !== null) {
-    for (var i = 0; i < finalScoreEntry.length; i++) {
+if (overallScore !== null) {
+
+    for (let i = 0; i < overallScore.length; i++) {
         var userEntryLi = document.createElement('li');
-        userEntryLi.textContent = finalScoreEntry;
+        userEntryLi.textContent = overallScore[i].user + " " + overallScore[i].score;
         scoreLog.appendChild(userEntryLi);
     }
 }
 
 clearButton.addEventListener("click", function() {
     scoreLog.innerHTML = ""
+    localStorage.clear();
 })
 
 backButton.addEventListener("click", function() {

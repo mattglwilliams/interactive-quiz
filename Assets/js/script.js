@@ -139,10 +139,22 @@ function checkAnswer(event) {
 
     initialsSubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
-        let finalScore = userScore;
-        let initalsScore = JSON.stringify(initialsInput.value + " : " + finalScore)
-        scores.push(initalsScore)
-        localStorage.setItem("scores", scores)
+        let initials = initialsInput.value;
+
+        let initialsAndScore = {
+            user: initials,
+            score: userScore
+        }
+
+        if(localStorage.getItem('scores') === null){
+            localStorage.setItem('scores', '[]');
+        }
+
+        let overallScore = JSON.parse(localStorage.getItem('scores'));
+        overallScore.push(initialsAndScore);
+
+        localStorage.setItem('scores', JSON.stringify(overallScore));
+
         window.location.replace("./HighScores.html");
-    })
+    });
   };
