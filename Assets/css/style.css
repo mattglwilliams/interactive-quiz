@@ -1,11 +1,14 @@
+/* website font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* globally adding the fond and resetting some properties */
 * {
     font-family: "Inter", sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* styling the highscores link */
 .highscores {
     float: left;
     margin: 5% 0 0 5%;
@@ -27,6 +30,7 @@
     color: purple;
 }
 
+/* styling the timer */
 .timer {
     float: right;
     margin: 5% 5% 0 0;
@@ -38,6 +42,7 @@
     text-align: center;
 }
 
+/* styling the questions container and all the elements within it */
 main {
     min-height: 100vh;
     display: flex;
