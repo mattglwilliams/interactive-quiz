@@ -63,7 +63,7 @@ let currentQuestionIndex = 0;
 let scores = [];
 
 startBtn.addEventListener("click", function runTimer () {
-    var timerInterval = setInterval(function () {
+    let timerInterval = setInterval(function () {
         if (timeLeft > 0) {
             timeLeft--;
             timer.textContent = timeLeft + " seconds remaning";
@@ -78,13 +78,13 @@ startBtn.addEventListener("click", function runTimer () {
 
 function getQuestions () {
     questionsElement.innerHTML = "";
-    for (var i = 0; i < questions.length; i++) {
-        var displayQuestion = questions[currentQuestionIndex].question;
-        var displayChoices = questions[currentQuestionIndex].choices;
+    for (let i = 0; i < questions.length; i++) {
+        let displayQuestion = questions[currentQuestionIndex].question;
+        let displayChoices = questions[currentQuestionIndex].choices;
         questionsElement.textContent = displayQuestion;
-        var choicesUl = document.createElement('ul');
+        let choicesUl = document.createElement('ul');
     displayChoices.forEach(function (choice) {
-            var choicesLi = document.createElement('li')
+        let choicesLi = document.createElement('li')
             choicesLi.textContent = choice;
             choicesUl.appendChild(choicesLi)
             choicesLi.addEventListener('click', checkAnswer)
@@ -94,8 +94,9 @@ function getQuestions () {
 }
 
 function checkAnswer(event) {
-    var selectedAnswer = event.target
-    var answerMessage = document.createElement("p")
+    let selectedAnswer = event.target
+    let answerMessage = document.createElement("p")
+    answerMessage.setAttribute("class", "answer-message")
     if (selectedAnswer.textContent === questions[currentQuestionIndex].answer) {
         console.log("Correct");
         userScore++;
@@ -119,11 +120,11 @@ function checkAnswer(event) {
   function endOfGame() {
     questionsElement.innerHTML = ""
     timeLeft = 0;
-    var gameOverHeading = document.createElement("h1")
-    var gameOverContent = document.createElement("p")
-    var initialsLabel = document.createElement("label")
-    var initialsInput = document.createElement("input")
-    var initialsSubmitButton = document.createElement("button")
+    let gameOverHeading = document.createElement("h1")
+    let gameOverContent = document.createElement("p")
+    let initialsLabel = document.createElement("label")
+    let initialsInput = document.createElement("input")
+    let initialsSubmitButton = document.createElement("button")
     // initialsSubmit.setAttribute("type", "submit")
     gameOverHeading.textContent = "Game Over!"
     gameOverContent.textContent = "You scored " + userScore + "."
@@ -138,8 +139,8 @@ function checkAnswer(event) {
 
     initialsSubmitButton.addEventListener("click", function (event) {
         event.preventDefault();
-        var finalScore = userScore;
-        var initalsScore = JSON.stringify(initialsInput.value + " : " + finalScore)
+        let finalScore = userScore;
+        let initalsScore = JSON.stringify(initialsInput.value + " : " + finalScore)
         scores.push(initalsScore)
         localStorage.setItem("scores", scores)
         window.location.replace("./HighScores.html");

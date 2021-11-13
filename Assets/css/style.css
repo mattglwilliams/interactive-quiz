@@ -101,3 +101,8 @@ button:hover {
     background-color: rgb(164, 68, 177);
     color: white;
 }
+
+.answer-message {
+    padding-top: 5%;
+    border: 3px dashed purple;
+}
